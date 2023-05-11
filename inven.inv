@@ -1,5 +1,5 @@
 [vm]
-3.27.117.18 ansible_user=ubuntu
+172.31.19.123 ansible_user=ec2-user
 
 [all:vars]
 ansible_connection=ssh
