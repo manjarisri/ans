@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('git chekcout') {
          steps{                
-	        git branch: 'deploy', url: 'https://github.com/manjarisri/ans.git'                 
+	        git branch: 'deploy', url: 'https://github.com/manjarisri/ans.git'  
+		sh 'echo $pub_key > id_rsa.pub' 
          }  
         }
         stage('ansible script') {
