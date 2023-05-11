@@ -1,7 +1,7 @@
 vm:
  hosts:
   h1:
-   ansible_host: ec2-user@3.27.117.18
+   ansible_host: ubuntu@3.27.117.18
 
 
 
