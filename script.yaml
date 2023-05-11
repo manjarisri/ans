@@ -1,0 +1,11 @@
+---
+- hosts: vm 
+  becomr: true 
+  tasks:
+   - name: copy app files
+     copy:
+      src: ./
+      dest: /var/www/myapp
+
+   - name: deploy app
+     command: python3 /var/www/myapp/todo.py
