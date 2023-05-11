@@ -1,10 +1,4 @@
-[vm]
-172.31.19.123 ansible_user= ubuntu
-
-
-
-
-
-
-
-   
+vm:
+ hosts:
+  h1:
+   ansible_host: ubuntu@3.27.117.18
