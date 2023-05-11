@@ -9,7 +9,7 @@ pipeline {
         }
         stage('ansible script') {
          steps{                
-                 ansiblePlaybook credentialsId: 'd0b55484-31ee-4382-81fd-4bd65411701e', disableHostKeyChecking: true, installation: 'ubuntu', inventory: 'inven.yaml', playbook: 'script.yaml'
+                 ansiblePlaybook credentialsId: '4cf364c0-96b9-4733-8e1c-b4d7bcada2fc', disableHostKeyChecking: true, installation: 'ubuntu', inventory: 'inven.yaml', playbook: 'script.yaml'
 		 sh 'ansible-playbook script.yaml -i inven.yaml'
          }  
         }
