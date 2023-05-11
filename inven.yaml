@@ -1,4 +1,6 @@
-vm:
- hosts:
-  h1:
-   ansible_host: ubuntu@3.27.117.18
+[vm]
+3.27.117.18 ansible_ssh_user=sshuser
+
+[all:vars]
+ansible_connection=ssh
+ansible_ssh_common_args='-o StrictHostKeyChecking=no -oHostKeyAlgorithms=+ssh-dss'
