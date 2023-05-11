@@ -4,11 +4,6 @@
   connection: ssh
 #   gather_facts: no
   tasks:
-   - name: Check connection
-     ping:
-     connection: ssh
-     ssh_args: -o LogLevel=VERBOSE -vvv
-
    - name: copy app files
      copy:
       src: ./
