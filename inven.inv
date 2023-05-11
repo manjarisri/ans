@@ -1,6 +1,2 @@
 [vm]
 3.27.117.18 ansible_user=ubuntu
-
-[all:vars]
-ansible_connection=ssh
-ansible_ssh_common_args='-o StrictHostKeyChecking=no -oHostKeyAlgorithms=+ssh-dss'
