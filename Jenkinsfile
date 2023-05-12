@@ -13,8 +13,8 @@ pipeline {
       } 
         stage('Pushnig image to dockerhub') {         
          steps{   
-            withCredentials([usernamePassword(credentialsId: 'dockerhubcred', variable: 'Manjari04')]){
-		    sh 'docker login -u manjarisri -p ${variable}' 
+            withCredentials([usernamePassword(credentialsId: 'dockerhubcred', password: 'Manjari04')]){
+		    sh 'docker login -u manjarisri -p ${password}' 
                     sh 'docker push manjarisri/todo:$BUILD_NUMBER'       
          }            
 	 } 
