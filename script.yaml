@@ -2,8 +2,6 @@
 - hosts: vm 
   become: true 
   connection: ssh
-#   gather_facts: no
-  vars: 
   tasks:
    - name: Read-write git checkout from github
      ansible.builtin.git:
