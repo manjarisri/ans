@@ -17,7 +17,7 @@
 #       dest: /var/www/myapp
    - name: deploy app
      command: pip3 install -r /home/ubuntu/ans/requirements.txt
-     command: pip3 install Flash FLask-SQLAlchemy /home/ubuntu/ans
+     command: pip3 install Flash FLask-SQLAlchemy 
 
    - name: deploy app
      command: python3 /home/ubuntu/ans/todo.py
