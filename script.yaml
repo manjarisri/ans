@@ -7,7 +7,7 @@
    - name: Read-write git checkout from github
      ansible.builtin.git:
       repo: https://github.com/manjarisri/ans.git
-      dest: /home/ubuntu
+      dest: /home/ubuntu/ans
 #    - name: copy app files
 #      copy:
 #       src: ./
