@@ -4,10 +4,14 @@
   connection: ssh
 #   gather_facts: no
   tasks:
-   - name: copy app files
-     copy:
-      src: ./
-      dest: /var/www/myapp
+   - name: Read-write git checkout from github
+     ansible.builtin.git:
+     repo: git@https://github.com/manjarisri/ans.git
+     dest: /home/ubuntu
+#    - name: copy app files
+#      copy:
+#       src: ./
+#       dest: /var/www/myapp
 
    - name: deploy app
-     command: python3 /var/www/myapp/todo.py
+     command: python3 /home/ubuntu/ans/todo.py
