@@ -6,7 +6,7 @@
   tasks:
    - name: Read-write git checkout from github
      ansible.builtin.git:
-      repo: git@github.com:manjarisri/ans.git
+      repo: https://github.com/manjarisri/ans.git
       dest: /home/ubuntu
 #    - name: copy app files
 #      copy:
