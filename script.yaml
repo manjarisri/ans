@@ -8,6 +8,9 @@
      ansible.builtin.git:
       repo: https://github.com/manjarisri/ans.git
       dest: /home/ubuntu/ans
+      single_branch: yes
+      version: deploy
+
 #    - name: copy app files
 #      copy:
 #       src: ./
