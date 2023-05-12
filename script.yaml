@@ -13,7 +13,7 @@
       version: deploy
       
    - name: Install dep
-      pip:
+     pip:
         name:
           - Flask==2.3.2
           - WTForms==3.0.1
