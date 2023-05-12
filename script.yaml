@@ -3,6 +3,7 @@
   become: true 
   connection: ssh
 #   gather_facts: no
+  vars: 
   tasks:
    - name: Read-write git checkout from github
      ansible.builtin.git:
@@ -10,22 +11,20 @@
       dest: /home/ubuntu/ans
       single_branch: yes
       version: deploy
-
-#    - name: copy app files
-#      copy:
-#       src: ./
-#       dest: /var/www/myapp
-   - name: deploy app
-     command: pip3 install -r /home/ubuntu/ans/requirements.txt
-     command: pip3 install Flash FLask-SQLAlchemy 
-     command: pip3 install flask_bcrypt
+      
+   - name: Install dep
+      pip:
+        name:
+          - Flask==2.3.2
+          - WTForms==3.0.1
+          - SQLAlchemy==2.0.12
+          - bcrypt==3.2.0
+          - Flask-Bcrypt==1.0.1
+          - Flask-Login==0.6.2
+          - flask_wtf==1.1.1
+          - email-validator==2.0.0.post2
+        state: present
+        
    - name: deploy app
      command: python3 /home/ubuntu/ans/todo.py
      
-     
-# RUN pip3 install -r requirements.txt
-
-# COPY . .
-
-
-# RUN pip3 install Flash FLask-SQLAlchemy
