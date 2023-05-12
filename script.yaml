@@ -18,7 +18,7 @@
    - name: deploy app
      command: pip3 install -r /home/ubuntu/ans/requirements.txt
      command: pip3 install Flash FLask-SQLAlchemy 
-
+     command: pip3 install flask_bcrypt
    - name: deploy app
      command: python3 /home/ubuntu/ans/todo.py
      
