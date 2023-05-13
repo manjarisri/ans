@@ -22,19 +22,12 @@ pipeline {
 	    
         stage('ansible script') {
           steps{
+	     timeout(time: 1, unit: 'MINUTES') {
 // 		 ansiblePlaybook credentialsId: '9a352752-57a6-498c-b58a-654e9f6a48b2', disableHostKeyChecking: true, installation: 'ubuntu', inventory: 'inven.inv', playbook: 'script.yaml'
-		  sh 'ansible all -i inven.inv -m ping'
-		  sh 'ansible-playbook script.yaml -i inven.inv'
+	        sh 'ansible all -i inven.inv -m ping'
+		sh 'ansible-playbook script.yaml -i inven.inv'
+            }		
           }  
-        }
-    }
-    post {
-        always {
-          script {
-                sh 'echo "Deployment complete"'
-                currentBuild.result = 'SUCCESS'
-                sh 'kill -9 %$(pgrep -f jenkinsfile)'
-          }
         }
     }
 }
