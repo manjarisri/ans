@@ -11,6 +11,15 @@ pipeline {
            sh 'docker build -t manjarisri/todo:$BUILD_NUMBER .'
           }
         } 
+	 stage('pushing image to dockerehub') {
+          steps {
+              withCredentials([string(credentialsId: 'docker', variable: 'pass')]) {
+	        sh 'docker login -u manjarisri -p $pass' 
+                sh 'docker push manjarisri/todo:$BUILD_NUMBER' 
+              }
+          }
+        }    	
+	    
         stage('ansible script') {
           steps{
 // 		 ansiblePlaybook credentialsId: '9a352752-57a6-498c-b58a-654e9f6a48b2', disableHostKeyChecking: true, installation: 'ubuntu', inventory: 'inven.inv', playbook: 'script.yaml'
