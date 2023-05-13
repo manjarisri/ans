@@ -27,7 +27,7 @@ pipeline {
 		  sh 'ansible-playbook script.yaml -i inven.inv'
           }  
         }
-	post {
+    post {
         always {
             script {
                 sh 'echo "Deployment complete"'
