@@ -27,14 +27,14 @@ pipeline {
 		  sh 'ansible-playbook script.yaml -i inven.inv'
           }  
         }
+    }
     post {
         always {
-            script {
+          script {
                 sh 'echo "Deployment complete"'
                 currentBuild.result = 'SUCCESS'
                 sh 'kill -9 %$(pgrep -f jenkinsfile)'
-            }
+          }
         }
-    }
     }
 }
