@@ -9,9 +9,6 @@
         dest: /home/ubuntu/ans
         single_branch: yes
         version: deploy
-        
-    - name: deploy app
-      command: python3 /home/ubuntu/ans/todo.py
      
     - name: start docker container
       docker_container:
