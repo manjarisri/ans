@@ -3,19 +3,20 @@
   become: true 
   connection: ssh
   tasks:
-   - name: git checkout 
-     ansible.builtin.git:
-      repo: https://github.com/manjarisri/ans.git
-      dest: /home/ubuntu/ans
-      single_branch: yes
-      version: deploy
+    - name: git checkout 
+      ansible.builtin.git:
+        repo: https://github.com/manjarisri/ans.git
+        dest: /home/ubuntu/ans
+        single_branch: yes
+        version: deploy
         
-   - name: deploy app
-     command: python3 /home/ubuntu/ans/todo.py
+    - name: deploy app
+      command: python3 /home/ubuntu/ans/todo.py
      
-  docker_container:
-   name: docker_con 
-   exposed_ports: 5000 
-   image: manjarisri/todo  
-   network_mode: hosts 
-   state: present 
+    - name: start docker container
+      docker_container:
+        name: docker_con 
+        exposed_ports: 5000 
+        image: manjarisri/todo  
+        network_mode: host 
+        state: started
