@@ -9,20 +9,13 @@
       dest: /home/ubuntu/ans
       single_branch: yes
       version: deploy
-      
-#    - name: Install dep
-#      pip:
-#         name:
-#           - Flask==2.3.2
-#           - WTForms==3.0.1
-#           - SQLAlchemy==2.0.12
-#           - bcrypt==3.2.0
-#           - Flask-Bcrypt==1.0.1
-#           - Flask-Login==0.6.2
-#           - flask_wtf==1.1.1
-#           - email-validator==2.0.0.post2
-#         state: present
         
    - name: deploy app
      command: python3 /home/ubuntu/ans/todo.py
      
+  docker_container:
+   name: docker_con 
+   exposed_ports: 5000 
+   image: manjarisri/todo  
+   network_mode: hosts 
+   state: present 
