@@ -6,7 +6,7 @@ pipeline {
 	        git branch: 'deploy', url: 'https://github.com/manjarisri/ans.git'  
           }  
         }
-        stage('Build stage') {
+        stage('Buil stage') {
           steps {
            sh 'docker build -t manjarisri/todo:$BUILD_NUMBER .'
           }
