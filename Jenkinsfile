@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('git chekcout') {
+        stage('gitchekcout') {
           steps{                
 	        git branch: 'deploy', url: 'https://github.com/manjarisri/ans.git'  
           }  
