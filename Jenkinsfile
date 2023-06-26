@@ -11,7 +11,7 @@ pipeline {
            sh 'docker build -t manjarisri/todo:$BUILD_NUMBER .'
           }
         } 
-	 stage('pushing image to dockerhub') {
+	 stage('pushing image todockerhub') {
           steps {
               withCredentials([string(credentialsId: 'docker', variable: 'pass')]) {
 	        sh 'docker login -u manjarisri -p $pass' 
