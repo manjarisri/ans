@@ -23,8 +23,7 @@ pipeline {
         stage('ansible script') {
           steps{
 	        sh 'ansible all -i inven.inv -m ping'
-		sh 'ansible-playbook script.yaml -i inven.inv'	
-		  
+		sh 'ansible-playbook script.yaml -i inven.inv'	  
           }  
         }
     }
